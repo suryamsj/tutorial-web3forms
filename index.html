@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Web3forms</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css" />
+
+    <!-- Costume Style -->
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h-captcha {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section>
+            <article>
+                <form action="https://api.web3forms.com/submit" method="post">
+                    <label>
+                        Nama
+                        <input type="text" name="fullname" placeholder="Nama" required />
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <!-- Subject Static -->
+                        <!-- <input type="hidden" name="subject" value="Seseorang telah mengirimkan form ke email anda"> -->
+                        <input type="hidden" name="from_name" value="XYZ">
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="Email" required />
+                    </label>
+                    <!-- Subject Dynamic -->
+                    <!-- <label>
+                        Subject
+                        <input type="text" name="subject" placeholder="Subject" required />
+                    </label> -->
+                    <label>
+                        Pesan
+                        <textarea placeholder="Pesan mu" name="message" required></textarea>
+                    </label>
+                    <div class="h-captcha" data-captcha="true"></div>
+                    <button type="submit">Submit</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <!-- Javascript -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+
+</html>
